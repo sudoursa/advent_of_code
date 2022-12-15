@@ -85,8 +85,7 @@ class Monkey():
             else:
                 self.all_monkies[self.false_monkey_target].catch_item(item)
         if self.test == 7:
-            # if self.isDivisibleby7(item.worry_level):
-            if item.worry_level % self.test == 0:
+            if self.isDivisibleby7(item.worry_level):
                 self.all_monkies[self.true_monkey_target].catch_item(item)
             else:
                 self.all_monkies[self.false_monkey_target].catch_item(item)
@@ -98,64 +97,60 @@ class Monkey():
             else:
                 self.all_monkies[self.false_monkey_target].catch_item(item)
         if self.test == 13:
-            # if self.isDivisibleby13(item.worry_level):
-            if item.worry_level % self.test == 0:
+            if self.isDivisibleby13(item.worry_level):
                 self.all_monkies[self.true_monkey_target].catch_item(item)
             else:
                 self.all_monkies[self.false_monkey_target].catch_item(item)
         if self.test == 17:
-            # if self.isDivisibleby17(item.worry_level): 
-            if item.worry_level % self.test == 0:
+            if self.isDivisibleby17(item.worry_level): 
                 self.all_monkies[self.true_monkey_target].catch_item(item)
             else:
                 self.all_monkies[self.false_monkey_target].catch_item(item)
         if self.test == 19:
-            # if self.isDivisibleby19(item.worry_level):
-            if item.worry_level % self.test == 0:
+            if self.isDivisibleby19(item.worry_level):
                 self.all_monkies[self.true_monkey_target].catch_item(item)
             else:
                 self.all_monkies[self.false_monkey_target].catch_item(item)
         if self.test == 23:
-            # if self.isDivisibleby23(item.worry_level):
-            if item.worry_level % self.test == 0:
+            if self.isDivisibleby23(item.worry_level):
                 self.all_monkies[self.true_monkey_target].catch_item(item)
             else:
                 self.all_monkies[self.false_monkey_target].catch_item(item)
 
-    # def isDivisibleby7(self, num):
-    #     while len(str(num)) > 3:
-    #         last_digit = int(str(num)[-1])
-    #         num = int(str(num)[:-1])
-    #         num -= last_digit * 2
-    #     return (num % 13 == 0)
+    def isDivisibleby7(self, num):
+        while len(str(num)) > 3:
+            last_digit = int(str(num)[-1])
+            num = int(str(num)[:-1])
+            num -= last_digit * 2
+        return (num % 7 == 0)
 
-    # def isDivisibleby13(self, num):
-    #     while len(str(num)) > 3:
-    #         last_digit = int(str(num)[-1])
-    #         num = int(str(num)[:-1])
-    #         num += last_digit * 4
-    #     return (num % 13 == 0)
+    def isDivisibleby13(self, num):
+        while len(str(num)) > 3:
+            last_digit = int(str(num)[-1])
+            num = int(str(num)[:-1])
+            num += last_digit * 4
+        return (num % 13 == 0)
    
-    # def isDivisibleby17(self, num):
-    #     while len(str(num)) > 3:
-    #         last_digit = int(str(num)[-1])
-    #         num = int(str(num)[:-1])
-    #         num -= last_digit * 5
-    #     return (num % 17 == 0)
+    def isDivisibleby17(self, num):
+        while len(str(num)) > 3:
+            last_digit = int(str(num)[-1])
+            num = int(str(num)[:-1])
+            num -= last_digit * 5
+        return (num % 17 == 0)
     
-    # def isDivisibleby19(self, num):
-    #     while len(str(num)) > 3:
-    #         last_digits = int(str(num)[-1])
-    #         num = int(str(num)[:-1])
-    #         num += last_digits * 2
-    #     return (num % 19 == 0)
+    def isDivisibleby19(self, num):
+        while len(str(num)) > 3:
+            last_digits = int(str(num)[-1])
+            num = int(str(num)[:-1])
+            num += last_digits * 2
+        return (num % 19 == 0)
 
-    # def isDivisibleby23(self, num):
-    #     while len(str(num)) > 3:
-    #         last_digit = int(str(num)[-1])
-    #         num = int(str(num)[:-1])
-    #         num += last_digit * 7
-    #     return (num % 23 == 0)
+    def isDivisibleby23(self, num):
+        while len(str(num)) > 3:
+            last_digit = int(str(num)[-1])
+            num = int(str(num)[:-1])
+            num += last_digit * 7
+        return (num % 23 == 0)
 
     def _relief_operation(self, item: Item) -> Item:
         # new_item_worry_level = item.worry_level//3
